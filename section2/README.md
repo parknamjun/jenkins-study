@@ -21,5 +21,8 @@
 * 
 * 
 
+### poll scm
+* 주기적으로 build, deploy
+
 
 
