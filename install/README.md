@@ -9,5 +9,5 @@
 * docker run -d -p 8080:8080 -p 50000:50000 --name jenkins-server --restart=on-failure -v jenkins_home:/var/jenkins_home/jenkins/jenkins:lts-jdk11
 
 ### password 확인
-* docker exec -it jenkins-server /bin/bash
+* docker exec -it jenkins-server bash
 * cat /var/jenkins_home/secrets/initialAdminPassword
