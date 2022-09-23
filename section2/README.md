@@ -17,8 +17,8 @@
   * Credentials : deploy 권한이 있는 tomcat 사용자 추가
 
 
-### Tomc
-* tomcat plugin install
+### Tomcat
+* 
 * 
 
 
