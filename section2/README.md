@@ -32,5 +32,22 @@
 * ![image](https://user-images.githubusercontent.com/4444533/192170117-cd694683-38d4-4eac-95c2-ffd56cb1b18c.png)
 * 서버정보
 * ![image](https://user-images.githubusercontent.com/4444533/192170131-a0fdc48b-27f4-42ce-a414-a4501650feb4.png)
+* docker-server에 접속하여 docker 상태를 확인한다. 아직 실행중인 컨테이너는 없는 상태
+* [root@7dd971023287 ~]# docker --version
+```
+C:\Users\USER>ssh root@localhost -p 10022
+root@localhost's password:
+
+Docker version 20.10.18, build b40c2f6
+[root@7dd971023287 ~]# docker images
+Cannot connect to the Docker daemon at unix:///var/run/docker.sock. Is the docker daemon running?
+[root@7dd971023287 ~]# systemctl status docker
+● docker.service - Docker Application Container Engine
+   Loaded: loaded (/usr/lib/systemd/system/docker.service; disabled; vendor preset: disabled)
+   Active: inactive (dead)
+     Docs: https://docs.docker.com
+[root@7dd971023287 ~]#
+```
+
 
 
