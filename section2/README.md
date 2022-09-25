@@ -33,7 +33,6 @@
 * 서버정보
 * ![image](https://user-images.githubusercontent.com/4444533/192170131-a0fdc48b-27f4-42ce-a414-a4501650feb4.png)
 * docker-server에 접속하여 docker 상태를 확인한다. 아직 실행중인 컨테이너는 없는 상태
-* [root@7dd971023287 ~]# docker --version
 ```
 C:\Users\USER>ssh root@localhost -p 10022
 root@localhost's password:
