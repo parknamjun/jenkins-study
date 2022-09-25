@@ -40,12 +40,13 @@ root@localhost's password:
 Docker version 20.10.18, build b40c2f6
 [root@7dd971023287 ~]# docker images
 Cannot connect to the Docker daemon at unix:///var/run/docker.sock. Is the docker daemon running?
-[root@7dd971023287 ~]# systemctl status docker
+[root@7dd971023287 ~]# systemctl status docker --docker 서비스 상태확인
 ● docker.service - Docker Application Container Engine
    Loaded: loaded (/usr/lib/systemd/system/docker.service; disabled; vendor preset: disabled)
    Active: inactive (dead)
      Docs: https://docs.docker.com
-[root@7dd971023287 ~]#
+[root@7dd971023287 ~]# systemctl start docker
+
 ```
 
 
