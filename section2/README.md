@@ -50,6 +50,8 @@ Cannot connect to the Docker daemon at unix:///var/run/docker.sock. Is the docke
 
 ```
 
+## 사내 네트워크 사용하면 오류가 있으므로 wifi guest를 사용해야 함
+
 
 ## docker login 정보확인
 ```
