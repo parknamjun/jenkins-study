@@ -62,7 +62,7 @@ C:\Users\USER\.docker>type config.json
 }
 
 C:\Users\USER\.docker>docker-credential-wincred.exe list
-{"https://index.docker.io/v1/":"lanovia"}
+{"https://index.docker.io/v1/":"USER_ACCOUNT"}
 ```
 
 
