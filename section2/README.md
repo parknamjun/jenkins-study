@@ -51,4 +51,20 @@ Cannot connect to the Docker daemon at unix:///var/run/docker.sock. Is the docke
 ```
 
 
+## docker login 정보확인
+```
+C:\Users\USER\.docker>type config.json
+{
+        "auths": {
+                "https://index.docker.io/v1/": {}
+        },
+        "credsStore": "desktop"
+}
+
+C:\Users\USER\.docker>docker-credential-wincred.exe list
+{"https://index.docker.io/v1/":"lanovia"}
+```
+
+
+
 
