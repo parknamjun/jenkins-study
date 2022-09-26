@@ -6,8 +6,11 @@
 * docker run -d -p 8080:8080 -p 50000:50000 --name jenkins-server --restart=on-failure jenkins/jenkins:lts-jdk11
 * docker logs jenkins-server
 
+```
+현재 학습에서 사용하지 않음
 ### 저장공간 지정(-v)
 * docker run -d -p 8080:8080 -p 50000:50000 --name jenkins-server --restart=on-failure -v jenkins_home:/var/jenkins_home/jenkins/jenkins:lts-jdk11
+```
 
 ### password 확인
 * docker exec -it jenkins-server bash
