@@ -2,9 +2,8 @@
 ## jenkins docker 
 
 ### 설치 & 실행
-* docker pull jenkins/jenkins
 * docker run -d -p 8080:8080 -p 50000:50000 --name jenkins-server --restart=on-failure jenkins/jenkins:lts-jdk11
-* docker logs jenkins-server
+* docker logs jenkins-server 최초 접속용 비밀번호 확인
 
 ```
 현재 학습에서 사용하지 않음
