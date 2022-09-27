@@ -48,6 +48,8 @@ Cannot connect to the Docker daemon at unix:///var/run/docker.sock. Is the docke
      Docs: https://docs.docker.com
 [root@7dd971023287 ~]# systemctl start docker
 
+docker 시작시 iptable 등의 오류가 있어 다음장으로 넘어감
+
 ```
 
 ## 사내 네트워크 사용하면 오류가 있으므로 wifi guest를 사용해야 함
