@@ -14,3 +14,7 @@
 ### password 확인
 * docker exec -it jenkins-server bash
 * cat /var/jenkins_home/secrets/initialAdminPassword
+
+
+### my-first-project
+* 
