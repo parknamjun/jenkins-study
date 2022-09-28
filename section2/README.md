@@ -10,11 +10,15 @@
 ### Deploy plugin
 * "deploy to container" plugin
 * Jenkins item : My-third-project
-* Post builder
-  * Deploy war/ear to a container
+* Post builder(빌드 후 조치)
+  * "Deploy war/ear to a container" 선택
   * WAR/EAR files : **/*.war
 * Container - Tomcat 9.x Remote
   * Credentials : deploy 권한이 있는 tomcat 사용자 추가
+  * tomcat-user.xml에 "username="deployer" password="deployer" roles="manager-script"를 추가
+  * "Add" jenkins 사용자를 선택 후 deployer 계정, 비밀번호, ID를 입력
+  * Credential combo에서 추가한 deployer를 선택한다.
+  * Tomcat URL : http://127.0.0.1:8088
 
 
 ### Tomcat
