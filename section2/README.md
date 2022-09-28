@@ -3,6 +3,8 @@
 * global setting
 * Jenkins item : My-second-project
   * https://github.com/joneconsulting/cicd-web-project
+  * Build/goals and options :clean compile package
+  * build
   
 
 ### Deploy plugin
