@@ -1,6 +1,6 @@
 ### git & maven
 * maven 설치
-* global setting
+* global setting에서 maven 버전을 선택
 * Jenkins item : My-second-project
   * https://github.com/joneconsulting/cicd-web-project
   * Build/goals and options :clean compile package
@@ -8,7 +8,7 @@
   
 
 ### Deploy plugin
-* deploy to container plugin
+* "deploy to container" plugin
 * Jenkins item : My-third-project
 * Post builder
   * Deploy war/ear to a container
