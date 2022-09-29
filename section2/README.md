@@ -70,7 +70,6 @@ docker 시작시 iptable 등의 오류가 있어 다음장으로 넘어감
     * FROM tomcat:9.0
     * COPY ./hello-world.war /usr/local/tomcat/webapps
 <img width="793" alt="image" src="https://user-images.githubusercontent.com/4444533/193154559-bfb6867c-8925-4e4e-89b6-f4da047049c5.png">
-
 <img width="793" alt="image" src="https://user-images.githubusercontent.com/4444533/193154598-ea177479-764e-4aed-a11f-2951a0b91cf4.png">
 
 
