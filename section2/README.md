@@ -65,6 +65,12 @@ docker 시작시 iptable 등의 오류가 있어 다음장으로 넘어감
 
 ```
 
+## apple m1으로 대체해서 진행
+  * Dockerfile
+    * FROM tomcat:9.0
+    * COPY ./hello-world.war /usr/local/tomcat/webapps
+    
+
 ## 사내 네트워크 사용하면 오류가 있으므로 wifi guest를 사용해야 함
 
 
