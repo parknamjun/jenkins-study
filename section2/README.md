@@ -35,8 +35,10 @@
 
 
 ## docker deploy
-* docker 이미지 설치
+* windows docker 이미지 설치
 * docker run --privileged --name docker-server -itd -p 10022:22 -p 8081:8080 -e container=docker -v /sys/fs/cgroup:/sys/fs/cgroup edowon0623/docker:latest /usr/sbin/init
+* MacOS apple silicon chip, m1) SSH 서버 (with 도커) 실행 명령어
+* docker run --privileged --name docker-server -itd -p 10022:22 -p 8081:8080 -e container=docker -v /sys/fs/cgroup:/sys/fs/cgroup:rw --cgroupns=host edowon0623/docker-server:m1 /usr/sbin/init
 * 접속 테스트 : ssh root@localhost -p 10022
 * password : P@ssw0rd
 * 기존에 ssh 정보가 있는 경우 에러가 발생할 수 있으므로 .ssh/known_hosts 파일에서 서버정보를 삭제한다.
