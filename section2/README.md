@@ -18,7 +18,7 @@
   * tomcat-user.xml에 "username="deployer" password="deployer" roles="manager-script"를 추가
   * "Add" jenkins 사용자를 선택 후 deployer 계정, 비밀번호, ID를 입력
   * Credential combo에서 추가한 deployer를 선택한다.
-  * Tomcat URL : http://HOSTPC-IP:8088, docker에서 HOST로 접속 
+  * Tomcat URL : http://HOSTPC-IP:8088, docker-jenkins에서 HOST PC로 접속하여 manager-script 권한을 가진 사용자로 deploy 함 
   * server.xml 8080을 8088로 변경
   * webapps/manager/META-INF/context.xml, webapps/host-manager/META-INF/contex.xml
     * 2개 파일 아래 부분을 주석으로 처리한다.
