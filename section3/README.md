@@ -13,6 +13,6 @@
 ### image download
 * docker pull edowon0623/ansible:latest
 * MacOS silicon chip, m1) docker pull edowon0623/ansible-server:m1
-* docker run --privileged -itd -p 20022:22 -p 8081:8080 -e container=docker -v /sys/fs/cgroup:/sys/fs/cgroup edowon0623/ansible-server:m1 /usr/sbin/init
+* docker run --privileged --name ansible-server -itd -p 20022:22 -p 8081:8080 -e container=docker -v /sys/fs/cgroup:/sys/fs/cgroup edowon0623/ansible-server:m1 /usr/sbin/init
 
 
