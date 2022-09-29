@@ -21,7 +21,7 @@
   * Tomcat URL : http://HOSTPC-IP:8088, docker-jenkins에서 HOST PC로 접속하여 manager-script 권한을 가진 사용자로 deploy 함 
   * server.xml 8080을 8088로 변경
   * webapps/manager/META-INF/context.xml, webapps/host-manager/META-INF/contex.xml
-    * 2개 파일 아래 부분을 주석으로 처리한다.
+    * 2개 파일 아래 부분을 주석으로 처리한다. 관리자 권한은 127 대역에서만 접속하게 하는 제약 사항임
     * Valve className="org.apache.catalina.valves.RemoteAddrValve"
     *  allow="127\.\d+\.\d+\.\d+|::1|0:0:0:0:0:0:0:1"
 
