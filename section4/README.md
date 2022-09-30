@@ -13,4 +13,6 @@ docker run --privileged --name docker-server -itd -p 10022:22 -e container=docke
  
 ### network 설정
 * docker network inspect bridge
-* 
+* docker-server : 172.17.0.3
+* ansible-server : 172.17.0.4
+
