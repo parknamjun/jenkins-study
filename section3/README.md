@@ -25,6 +25,7 @@ failed to start daemon: Error initializing network controller: error obtaining c
 * docker run --privileged --name ansible-server -itd -p 20022:22 -p 8081:8080 -e container=docker -v /sys/fs/cgroup:/sys/fs/cgroup --cgroupns=host edowon0623/ansible-server:m1 /usr/sbin/init
 * systemctl start docker 정상확인...
 
+<pre>
 ----------------------------------------
 iptables-config
 # Load additional iptables modules (nat helpers)
@@ -148,3 +149,6 @@ IP6TABLES_STATUS_LINENUMBERS="yes"
 # second.
 # Only usable with IP6TABLES_RESTORE_WAIT > 0
 #IP6TABLES_RESTORE_WAIT_INTERVAL=1000000
+
+</pre>
+
