@@ -12,7 +12,9 @@
 
 ### image download
 * window 노트북에서 안되는 이유는 ?? virtual box 
+* Docker 설정에서 WSL2를 사용하지 않게 수정하고, 아래 docker 파일을 이용해서 image를 생성하면 됨
 * ansible-server Dockerfile
+* docker build -t ansible-server .
 ```
 # FROM centos:7
 FROM centos:8
@@ -67,7 +69,7 @@ ENTRYPOINT ["/sbin/init", "systemctl", "start", "sshd"]
 # CMD ["systemctl", "start", "sshd"]
 ```
 
-* docker run --privileged -itd --name ansible-server -p 20022:22 -p 8081:8080 -e container=docker -v /sys/fs/cgroup:/sys/fs/cgroup --cgroupns=host edowon0623/ansible:latest /usr/sbin/init
+* docker run --privileged -itd --name ansible-server -p 20022:22 -p 8081:8080 -e container=docker -v /sys/fs/cgroup:/sys/fs/cgroup --cgroupns=host ansible-server /usr/sbin/init
 
 
 
