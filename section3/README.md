@@ -13,6 +13,8 @@
 ### image download
 * window 노트북에서 안되는 이유는 ?? virtual box 
 * Docker 설정에서 WSL2를 사용하지 않게 수정하고, 아래 docker 파일을 이용해서 image를 생성하면 됨
+![image](https://user-images.githubusercontent.com/4444533/196851489-995cab12-2337-4985-89f7-ad5347a6a297.png)
+
 * ansible-server Dockerfile
 * docker build -t ansible-server .
 ```
