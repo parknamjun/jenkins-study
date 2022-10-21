@@ -8,8 +8,7 @@ https://www.inflearn.com/course/젠킨스-ci-cd-파이프라인/dashboard
 * docker run --privileged --name docker-server -itd -p 10022:22 -p 8081:8080 -e container=docker -v /sys/fs/cgroup:/sys/fs/cgroup edowon0623/docker:latest /usr/sbin/init
 
 ### andible-server 
-### image download
-* window 노트북에서 안되는 이유는 ?? virtual box 
+* image download
 * Docker 설정에서 WSL2를 사용하지 않게 수정하고, 아래 docker 파일을 이용해서 image를 생성하면 됨
 ![image](https://user-images.githubusercontent.com/4444533/196851489-995cab12-2337-4985-89f7-ad5347a6a297.png)
 
