@@ -26,14 +26,6 @@
     *  allow="127\.\d+\.\d+\.\d+|::1|0:0:0:0:0:0:0:1"
 
 
-### Tomcat
-* 
-* 
-
-### poll scm
-* 주기적으로 build, deploy
-
-
 ## docker deploy
 * windows docker 이미지 설치
 * docker run --privileged --name docker-server -itd -p 10022:22 -p 8081:8080 -e container=docker -v /sys/fs/cgroup:/sys/fs/cgroup edowon0623/docker:latest /usr/sbin/init
