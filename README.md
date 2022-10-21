@@ -120,4 +120,4 @@ ENTRYPOINT ["/sbin/init", "systemctl", "start", "sshd"]
 # CMD ["systemctl", "start", "sshd"]
 ```
 
-* docker run --privileged -itd --name ansible-server -p 20022:22 -p 8081:8080 -e container=docker -v /sys/fs/cgroup:/sys/fs/cgroup --cgroupns=host ansible-server /usr/sbin/init
+* docker run --privileged -itd --name ansible-server -p 20022:22 -p 8082:8080 -e container=docker -v /sys/fs/cgroup:/sys/fs/cgroup --cgroupns=host ansible-server /usr/sbin/init
