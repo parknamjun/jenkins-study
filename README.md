@@ -2,6 +2,10 @@
 ## 인프런강의
 https://www.inflearn.com/course/젠킨스-ci-cd-파이프라인/dashboard
 
+docker file
+
+https://github.com/joneconsulting/docker-files
+
 ## 메인PC에서 아래 서버를 docker로 실행
 
 ### jenkins-server
