@@ -4,6 +4,10 @@ https://www.inflearn.com/course/젠킨스-ci-cd-파이프라인/dashboard
 
 ## 메인PC에서 아래 서버를 docker로 실행
 
+### jenkins-server
+* 아래 docker를 사용해도 문제 없음
+* docker run -d -p 8080:8080 -p 50000:50000 --name jenkins-server --restart=on-failure jenkins/jenkins:lts-jdk11
+
 ### docker-server
 * docker build -t docker-server .
 ```
