@@ -127,3 +127,10 @@ ENTRYPOINT ["/sbin/init", "systemctl", "start", "sshd"]
 ```
 * docker run --privileged --name docker-server -itd -p 10022:22 -p 8081:8080 -e container=docker-server -v /sys/fs/cgroup:/sys/fs/cgroup docker-server /usr/sbin/init
 
+### ansible server 환경설정
+* /etc/ansible/hosts
+```
+[devops]
+172.17.0.3
+172.17.0.4
+```
