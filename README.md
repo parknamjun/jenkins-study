@@ -5,7 +5,7 @@ https://www.inflearn.com/course/젠킨스-ci-cd-파이프라인/dashboard
 ## 메인PC에서 아래 서버를 docker로 실행
 
 ### docker-server
-* docker build -t ansible-server .
+* docker build -t docker-server .
 ```
 # FROM arm64v8/centos:7
 FROM centos:8
