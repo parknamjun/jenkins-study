@@ -138,3 +138,12 @@ ENTRYPOINT ["/sbin/init", "systemctl", "start", "sshd"]
 172.17.0.3
 172.17.0.4
 ```
+
+## ssh key
+* ssh 접속시 비밀번호 없이 접속하기 위함
+* ansible 서버에서 생성한다.
+```
+ssh-keygen
+ssh-copy-id root@[접속할 서버 IP]
+```
+
