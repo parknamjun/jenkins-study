@@ -6,7 +6,7 @@ docker file
 
 https://github.com/joneconsulting/docker-files
 
-## 메인PC에서 아래 서버를 docker로 실행
+# Jenkins + Infrastructure as Code 와의 연동
 
 ### jenkins-server
 * 아래 docker를 사용해도 문제 없음
@@ -153,6 +153,8 @@ ENTRYPOINT ["/sbin/init", "systemctl", "start", "sshd"]
 172.17.0.3# ssh-copy-id root@172.17.0.4 --> 원격서버에 복사
 172.17.0.3# ssh-copy-id root@172.17.0.3 --> localhost에서 사용 가능하게 추가
 ```
+
+## Ansible 모듈 사용
 ### ansible option
 * -i 적용될 호스트파일 정보
 * -m 모듈선택
@@ -181,6 +183,5 @@ ENTRYPOINT ["/sbin/init", "systemctl", "start", "sshd"]
 * sw install
   * [root@ansible ~]# ansible devops -m yum -a "name=httpd state=present"
 
-# Jenkins + Infrastructure as Code 와의 연동
 ## ansible playbook
-
+### 
