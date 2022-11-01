@@ -181,5 +181,6 @@ ENTRYPOINT ["/sbin/init", "systemctl", "start", "sshd"]
 * sw install
   * [root@ansible ~]# ansible devops -m yum -a "name=httpd state=present"
 
+# Jenkins + Infrastructure as Code 와의 연동
 ## ansible playbook
 
