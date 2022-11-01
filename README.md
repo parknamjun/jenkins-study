@@ -184,4 +184,16 @@ ENTRYPOINT ["/sbin/init", "systemctl", "start", "sshd"]
   * [root@ansible ~]# ansible devops -m yum -a "name=httpd state=present"
 
 ## ansible playbook
-### 
+### first-playbook.yml
+```
+---
+- name: Add an ansible hosts
+  hosts: localhost
+  tasks:
+  - name: add an ansible hosts
+  blockinfile:
+    path: /etc/ansible/hosts
+    block: |
+      [mygroup]
+      172.17.0.5
+```
