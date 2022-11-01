@@ -149,7 +149,8 @@ ENTRYPOINT ["/sbin/init", "systemctl", "start", "sshd"]
 * ssh 접속시 비밀번호 없이 접속하기 위함
 * ansible 서버에서 생성한다.
 ```
-ssh-keygen
-ssh-copy-id root@[접속할 서버 IP]
+172.17.0.3# ssh-keygen
+172.17.0.3# ssh-copy-id root@172.17.0.4 --> 원격서버에 복사
+172.17.0.3# ssh-copy-id root@172.17.0.3 --> localhost에서 사용 가능하게 추가
 ```
 
