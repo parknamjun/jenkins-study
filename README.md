@@ -181,5 +181,5 @@ ENTRYPOINT ["/sbin/init", "systemctl", "start", "sshd"]
 * sw install
   * [root@ansible ~]# ansible devops -m yum -a "name=httpd state=present"
 
-## ansible aplybook
+## ansible playbook
 
