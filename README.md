@@ -133,6 +133,8 @@ ENTRYPOINT ["/sbin/init", "systemctl", "start", "sshd"]
 
 ### ansible server 환경설정
 * /etc/ansible/hosts
+ansible-server:172.17.0.3
+docker-server:172.17.0.4
 ```
 [devops]
 172.17.0.3
