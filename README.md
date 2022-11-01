@@ -180,4 +180,6 @@ ENTRYPOINT ["/sbin/init", "systemctl", "start", "sshd"]
   * [root@ansible ~]# ansible all -m copy -a "src=./test.txt dest=/tmp"
 * sw install
   * [root@ansible ~]# ansible devops -m yum -a "name=httpd state=present"
-  * 
+
+## ansible aplybook
+
