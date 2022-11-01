@@ -159,7 +159,7 @@ ENTRYPOINT ["/sbin/init", "systemctl", "start", "sshd"]
 * -k 관리자 암호
 * -k 관리자 권한 상승
 * --list-hosts 적용되는 호스트 목록
-* ansible all -m ping
+* [root@ansible ~]# ansible all -m ping
 ```
 172.17.0.3 | SUCCESS => {
     "ansible_facts": {
