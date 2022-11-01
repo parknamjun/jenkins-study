@@ -153,4 +153,29 @@ ENTRYPOINT ["/sbin/init", "systemctl", "start", "sshd"]
 172.17.0.3# ssh-copy-id root@172.17.0.4 --> 원격서버에 복사
 172.17.0.3# ssh-copy-id root@172.17.0.3 --> localhost에서 사용 가능하게 추가
 ```
-
+### ansible option
+* -i 적용될 호스트파일 정보
+* -m 모듈선택
+* -k 관리자 암호
+* -k 관리자 권한 상승
+* --list-hosts 적용되는 호스트 목록
+* ansible all -m ping
+```
+172.17.0.3 | SUCCESS => {
+    "ansible_facts": {
+        "discovered_interpreter_python": "/usr/libexec/platform-python"
+    },
+    "changed": false,
+    "ping": "pong"
+}
+172.17.0.4 | SUCCESS => {
+    "ansible_facts": {
+        "discovered_interpreter_python": "/usr/libexec/platform-python"
+    },
+    "changed": false,
+    "ping": "pong"
+}
+```
+* file copy
+  * [root@ansible ~]# ansible all -m copy -a "src=./test.txt dest=/tmp"
+* 
