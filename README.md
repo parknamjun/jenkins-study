@@ -141,6 +141,10 @@ ENTRYPOINT ["/sbin/init", "systemctl", "start", "sshd"]
 172.17.0.4
 ```
 
+### ansible & docker 구성
+![image](https://user-images.githubusercontent.com/4444533/199354302-9e39db7a-e697-4e64-8848-69d9794c8230.png)
+
+
 ## ssh key
 * ssh 접속시 비밀번호 없이 접속하기 위함
 * ansible 서버에서 생성한다.
