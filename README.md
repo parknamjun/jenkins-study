@@ -190,10 +190,10 @@ ENTRYPOINT ["/sbin/init", "systemctl", "start", "sshd"]
 - name: Add an ansible hosts
   hosts: localhost
   tasks:
-  - name: add an ansible hosts
-  blockinfile:
-    path: /etc/ansible/hosts
-    block: |
-      [mygroup]
-      172.17.0.5
+    - name: add an ansible hosts
+      blockinfile:
+        path: /etc/ansible/hosts
+        block: |
+          [mygroup]
+          172.17.0.5
 ```
