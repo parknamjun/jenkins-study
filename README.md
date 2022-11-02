@@ -198,4 +198,24 @@ ENTRYPOINT ["/sbin/init", "systemctl", "start", "sshd"]
           172.17.0.5
 ```
 
+### tomcat 버전 68로 변경, sha 경로 
+```
+---
+- name: Download Tomcat9 from tomcat.apache.org
+  hosts: devops
+  tasks:
+   - name: Create a Directory /opt/tomcat9
+     file:
+       path: /opt/tomcat9
+       state: directory
+       mode: 0755
+   - name: Download Tomcat using get_url
+     get_url:
+       url: https://dlcdn.apache.org/tomcat/tomcat-9/v9.0.68/bin/apache-tomcat-9.0.68.tar.gz
+       dest: /opt/tomcat9
+       mode: 0755
+       checksum: sha512:https://archive.apache.org/dist/tomcat/tomcat-9/v9.0.68/bin/apache-tomcat-9.0.68.tar.gz.sha512
+
+```
+
 
