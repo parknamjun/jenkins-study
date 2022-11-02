@@ -218,4 +218,8 @@ ENTRYPOINT ["/sbin/init", "systemctl", "start", "sshd"]
 
 ```
 
+### playbook sample2
+```
+
+```
 
