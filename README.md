@@ -227,3 +227,37 @@ ENTRYPOINT ["/sbin/init", "systemctl", "start", "sshd"]
 * ansible 접속 ssh 
 <img width="842" alt="image" src="https://user-images.githubusercontent.com/4444533/199842602-bc634d75-f7b0-4c05-8a2b-a4a81ea33652.png">
 
+* 모든환경에서 docker가 기본적으로 사용가능해야 함
+* anslble deploy playbook
+* https://github.com/joneconsulting/jenkins_cicd_script/blob/master/playbook_script/exam5-devops-playbook1.yml
+```
+- hosts: all
+#   become: true  
+
+  tasks:
+  - name: build a docker image with deployed war file
+    command: docker build -t cicd-project-ansible .
+    args: 
+        chdir: /root
+```
+
+* hosts 파일을 만들고
+```
+172.17.0.3
+```
+* ansible-playbook -i hosts first-devops-playbook.yml
+* docker container 추가작업
+```
+- hosts: all
+#   become: true  
+
+  tasks:
+  - name: build a docker image with deployed war file
+    command: docker build -t cicd-project-ansible .
+    args: 
+      chdir: /root
+  - name : create a container using cicd-project-ansible image
+    command: docker run -d --name my-cicd-project -p 8081:8080 cicd-project-ansible
+```
+* docker ps -a 상태 확인
+* 
