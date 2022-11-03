@@ -202,7 +202,8 @@ ENTRYPOINT ["/sbin/init", "systemctl", "start", "sshd"]
           172.17.0.5
 ```
 
-### tomcat 버전 68로 변경, sha 경로 
+### playbook-sample2.yml
+* tomcat 버전 68로 변경, checksum 주소변경 
 ```
 ---
 - name: Download Tomcat9 from tomcat.apache.org
@@ -222,8 +223,4 @@ ENTRYPOINT ["/sbin/init", "systemctl", "start", "sshd"]
 
 ```
 
-### playbook sample2
-```
-
-```
 
