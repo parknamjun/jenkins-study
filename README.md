@@ -133,7 +133,7 @@ ENTRYPOINT ["/sbin/init", "systemctl", "start", "sshd"]
 
 
 ## 이하 모든 실습은 apple m1에서 진행함
-* 현재 윈도우PC에서는 docker는 2개 이상 사용 불가....
+* 현재 업무용 PC에서는 docker는 2개 이상 사용하면 ssh접속이 안되네...
 
 ### ansible server 환경설정
 * /etc/ansible/hosts
