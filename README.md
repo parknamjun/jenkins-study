@@ -223,4 +223,7 @@ ENTRYPOINT ["/sbin/init", "systemctl", "start", "sshd"]
 
 ```
 
+### Jenkins + Ansible 연동하기
+* ansible 접속 ssh 
+<img width="842" alt="image" src="https://user-images.githubusercontent.com/4444533/199842602-bc634d75-f7b0-4c05-8a2b-a4a81ea33652.png">
 
