@@ -257,7 +257,7 @@ ENTRYPOINT ["/sbin/init", "systemctl", "start", "sshd"]
     args: 
       chdir: /root
   - name : create a container using cicd-project-ansible image
-    command: docker run -d --name my-cicd-project -p 8081:8080 cicd-project-ansible
+    command: docker run -d --name my-cicd-project -p 8080:8080 cicd-project-ansible
 ```
 * docker ps -a 상태 확인
 * 
