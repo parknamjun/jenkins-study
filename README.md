@@ -260,4 +260,27 @@ ENTRYPOINT ["/sbin/init", "systemctl", "start", "sshd"]
     command: docker run -d --name my-cicd-project -p 8080:8080 cicd-project-ansible
 ```
 * docker ps -a 상태 확인
-* 
+
+```
+- hosts: all
+#  become: true
+  tasks:
+    - name: stop current running container
+      command: docker stop my-cicd-project
+      ignore_errors: yes
+    - name: remove stopped container
+      command: docker rm my-cicd-project
+      ignore_errors: yes
+    - name: remove current docker image
+      command: docker rmi cicd-project-ansible
+      ignore_errors: yes
+
+    - name: build a docker image with deployed war file
+      command: docker build -t cicd-project-ansible .
+      args:
+        chdir: /root
+
+    - name : create a container using cicd-project-ansible image
+      command: docker run -d --name my-cicd-project -p 8080:8080 cicd-project-ansible
+```
+
