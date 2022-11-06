@@ -284,3 +284,99 @@ ENTRYPOINT ["/sbin/init", "systemctl", "start", "sshd"]
       command: docker run -d --name my-cicd-project -p 8080:8080 cicd-project-ansible
 ```
 
+### Ansible을 이용한 Docker image 관리
+```
+[root@ansible ~]# docker images
+REPOSITORY                     TAG       IMAGE ID       CREATED      SIZE
+lanovia/cicd-project-ansible   latest    2de09ae1c475   2 days ago   478MB
+cicd-project-ansible           latest    2de09ae1c475   2 days ago   478MB
+<none>                         <none>    7cc16cc9ed55   2 days ago   478MB
+<none>                         <none>    0d02e04f32c0   2 days ago   478MB
+<none>                         <none>    ccd207ca38c6   2 days ago   478MB
+tomcat                         9.0       da0ee5569ad8   4 days ago   470MB
+[root@ansible ~]# docker tag cicd-project-ansible lanovia/cicd-project-ansible
+[root@ansible ~]# docker login
+Username: lanovia
+Password:
+```
+* https://hub.docker.com/ 업로드 내용 확인
+* Image 생성 후 hub 배포, hosts 파일에 3, 4 IP가 있어 3번에서만 image를 생성하는 조건으로 실행
+```
+reate-cicd-devops-image.yml 
+
+- hosts: all
+#  become: true
+  tasks:
+    - name: create a docker image with deployed war file
+      command: docker build -t lanovia/cicd-project-ansible .
+      args:
+        chdir: /root
+    - name: push the image on Docker hub
+      command: docker push lanovia/cicd-project-ansible
+      ignore_errors: yes
+
+    - name : remove the docker image from the ansible server
+      command: docker rmi lanovia/cicd-project-ansible
+      ignore_errors: yes      
+```
+* 현재 ansible에서만 image 생성
+* ansible-playbook -i hosts create-cicd-devops-image.yml --limit 172.17.0.3
+
+* Image를 만든 후 배포하는 playbook
+```
+create-cicd-devops-container.yml
+
+- hosts: all
+#  become: true
+  tasks:
+    - name: stop current running container
+      command: docker stop my-cicd-project
+      ignore_errors: yes
+    - name: remove stopped container
+      command: docker rm my-cicd-project
+      ignore_errors: yes
+
+    - name: remove current docker image
+      command: docker rmi lanovia/cicd-project-ansible
+      ignore_errors: yes
+
+    - name: pull the newest docker image from docker hub
+      command: docker pull lanovia/cicd-project-ansible
+      args:
+        chdir: /root
+
+    - name : create a container using cicd-project-ansible image
+      command: docker run -d --name my-cicd-project -p 8080:8080 lanovia/cicd-project-ansible
+```
+* 172.17.0.4 서버만 적용하는 조건
+* [root@ansible ~]# ansible-playbook -i hosts create-cicd-devops-container.yml --limit 172.17.0.4
+```
+[WARNING]: An error occurred while calling ansible.utils.display.initialize_locale (unsupported
+locale setting). This may result in incorrectly calculated text widths that can cause Display to
+print incorrect line lengths
+
+PLAY [all] ****************************************************************************************
+
+TASK [Gathering Facts] ****************************************************************************
+ok: [172.17.0.4]
+
+TASK [stop current running container] *************************************************************
+changed: [172.17.0.4]
+
+TASK [remove stopped container] *******************************************************************
+changed: [172.17.0.4]
+
+TASK [remove current docker image] ****************************************************************
+changed: [172.17.0.4]
+
+TASK [pull the newest docker image from docker hub] ***********************************************
+changed: [172.17.0.4]
+
+TASK [create a container using cicd-project-ansible image] ****************************************
+changed: [172.17.0.4]
+
+PLAY RECAP ****************************************************************************************
+172.17.0.4                 : ok=6    changed=5    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
+```
+
+
