@@ -382,6 +382,7 @@ PLAY RECAP *********************************************************************
 ### Ansible playbook으로 Docker container 생성하기
 * jenkins new item : My-playbook-project를 My-ansible-pproject에서 복사
 <img width="543" alt="image" src="https://user-images.githubusercontent.com/4444533/200217979-77410146-958a-4065-adfd-ca3bcb68dd1a.png">
+
 * jenkins run
 
 
