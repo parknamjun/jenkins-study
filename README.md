@@ -379,4 +379,9 @@ PLAY RECAP *********************************************************************
 172.17.0.4                 : ok=6    changed=5    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
 ```
 
+### Ansible playbook으로 Docker container 생성하기
+* jenkins new item : My-playbook-project를 My-ansible-pproject에서 복사
+<img width="543" alt="image" src="https://user-images.githubusercontent.com/4444533/200217979-77410146-958a-4065-adfd-ca3bcb68dd1a.png">
+* jenkins run
+
 
