@@ -387,4 +387,10 @@ PLAY RECAP *********************************************************************
 
 
 ## Section 4. Jenkins + Ansible + Kubernetes 연동
-
+### docker k8s 사용
+* kubectl get nodes
+```
+ ~/I/S/je/k8s  kubectl get nodes 
+NAME             STATUS   ROLES           AGE   VERSION
+docker-desktop   Ready    control-plane   10h   v1.25.2
+```
