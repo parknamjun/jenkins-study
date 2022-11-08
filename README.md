@@ -396,6 +396,7 @@ docker-desktop   Ready    control-plane   10h   v1.25.2
 ```
 
 ### kubectl yml 사용
+* sample1.yml
 ```
 apiVersion: apps/v1
 kind: Deployment
