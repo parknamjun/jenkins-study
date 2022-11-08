@@ -420,3 +420,17 @@ spec:
         ports:
         - containerPort: 80
 ```
+* kubectl get deployments
+```
+NAME               READY   UP-TO-DATE   AVAILABLE   AGE
+nginx-deployment   0/2     2            0           11s
+</pre>
+```
+* kubectl get pods
+```
+NAME                                READY   STATUS    RESTARTS   AGE
+nginx-deployment-7fb96c846b-449mp   1/1     Running   0          30s
+nginx-deployment-7fb96c846b-vzp8w   1/1     Running   0          30s
+```
+
+
