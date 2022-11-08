@@ -395,7 +395,7 @@ NAME             STATUS   ROLES           AGE   VERSION
 docker-desktop   Ready    control-plane   10h   v1.25.2
 ```
 
-### kubectl yml 사용
+### Kubernetes 기본 명령어
 * sample1.yml
 ```
 apiVersion: apps/v1
@@ -432,5 +432,7 @@ NAME                                READY   STATUS    RESTARTS   AGE
 nginx-deployment-7fb96c846b-449mp   1/1     Running   0          30s
 nginx-deployment-7fb96c846b-vzp8w   1/1     Running   0          30s
 ```
+
+### kubernetes script 파일
 
 
