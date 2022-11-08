@@ -10,7 +10,7 @@
   * CREATE DATABASE confluence CHARACTER SET utf8mb4 COLLATE utf8mb4_bin;
 
 * Mysql volume을 사용
-* docker run --name mysql -e MYSQL_ROOT_PASSWORD=root -v /C/docker-volume/mysql:/var/lib/mysql -d mysql
+* docker run --name mysql -p 3306:3306 -e MYSQL_ROOT_PASSWORD=root -v /C/docker-volume/mysql:/var/lib/mysql -d mysql
 
  메모리를 얼마로 해야 하나...
  
