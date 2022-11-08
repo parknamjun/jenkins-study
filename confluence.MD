@@ -8,7 +8,9 @@
   * cp mysql-connector-java-5.1.49.jar /opt/atlassian/confluence/confluence/WEB-INF/lib
   * docker restart confluence
   * CREATE DATABASE confluence CHARACTER SET utf8mb4 COLLATE utf8mb4_bin;
-
+* DB연결 설정
+  * jdbc:mysql://172.17.0.3/confluence?useSSL=false&allowPublicKeyRetrieval=true&sessionVariables=transaction_isolation='READ-COMMITTED'
+  * 
 * Mysql volume을 사용
 * docker run --name mysql -p 3306:3306 -e MYSQL_ROOT_PASSWORD=root -v /C/docker-volume/mysql:/var/lib/mysql -d mysql
 
