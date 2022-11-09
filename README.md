@@ -492,4 +492,5 @@ cicd-service   NodePort    10.107.203.83   <none>        8080:32000/TCP   16s
 
 ### Kubernetes + Ansible 연동
 
+### 실습8) Jenkins를 이용한 CI/CD 자동화 파이프라인 구축하기 ①
 
