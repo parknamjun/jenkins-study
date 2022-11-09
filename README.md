@@ -492,6 +492,52 @@ cicd-service   NodePort    10.107.203.83   <none>        8080:32000/TCP   16s
 
 ### Kubernetes + Ansible 연동
 
+### Ansible에서 Kubernetes 제어하기
+* ansible docker
+* k8s 디렉토리를 만들고 hosts 파일을 생성한다
+```
+[root@ansible ~]# cat k8s/hosts
+[ansible-server]
+localhost
+
+[kubernetes]
+150.74.201.75
+````
+* k8s 서버와 ssh 연결을 확인한다.
+* [root@ansible ~]# ansible -i k8s/hosts kubernetes -m ping
+```
+[root@ansible ~]# ansible -i k8s/hosts kubernetes -m ping
+[WARNING]: Invalid characters were found in group names but not replaced, use -vvvv to see details
+150.74.201.75 | UNREACHABLE! => {
+    "changed": false,
+    "msg": "Failed to connect to the host via ssh: root@150.74.201.75: Permission denied (publickey,password,keyboard-interactive).",
+    "unreachable": true
+}
+```
+* k8s로 ansible ssh key를 복사해야 한다.
+````
+ [root@ansible ~]# ssh-copy-id parknamjun@150.74.201.75
+ ~/IdeaProjects/Study/jenkins  cat ~/.ssh/authorized_keys                                   ✔  07:48:38
+ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQC/gPFNhp+Y6WiHzrm/J+gy7M0UgkTvPSGxREOP0IwRPdiDjPKBHYaoE29DsAmt8wUnpGd1E6+62TDFPhtoaBo3byafvCV4BFn/4o0i54TxMDJuJxXYK9XqpAHY5WqAerFbOdwqWoUIE6HVqmEtIwM2oNIVFoya42eY3cP1ttHAcRw3rihuDq0IiirACjukWaEahIqfRW9q3YnJEu8gW15B0+lsZENtCibjZJE1/J9Iz3nx2jqAKFBPoR6+9w2EDReuZ4DMeclKo6vGoSNy/kb6b+CG5V4zBto4DNj36TPLEHDCTn2qaJsqiZwn8sd8D5mG4ZCNJTLknw9uChDdLBjLHSRfP5OXOQjrQKAjpJ3HhRHy2rbUyGx251YAKyChZqjAFZqeMulWce0u6hBDJph73L1sPzjhdvBUnr+T2ZEcGm1FKI5/9LsHLoZgNGtEow1Wzl2I3N9I4nACn97YIdAkeeCu+U/7S6tLqPHlvGpTXucKaSG8c3o9LD2q6Wn0mVE= root@93cdc1d35c55
+````
+* root 계정으로 복사되므로 원격에서 접속하려면 Mac 사용자 계정을 이용해야 한다.
+```
+[root@ansible ~]# ansible -i k8s/hosts kubernetes -m ping -u parknamjun
+[WARNING]: Invalid characters were found in group names but not replaced, use -vvvv to see details
+[WARNING]: Platform darwin on host 150.74.201.75 is using the discovered Python interpreter at
+/usr/bin/python3, but future installation of another Python interpreter could change the meaning of that
+path. See https://docs.ansible.com/ansible-core/2.13/reference_appendices/interpreter_discovery.html for
+more information.
+150.74.201.75 | SUCCESS => {
+    "ansible_facts": {
+        "discovered_interpreter_python": "/usr/bin/python3"
+    },
+    "changed": false,
+    "ping": "pong"
+}
+```
+
+
 ### 실습8) Jenkins를 이용한 CI/CD 자동화 파이프라인 구축하기 ①
 * ansible docker에서 확인
 ```
@@ -530,5 +576,6 @@ replicaset.apps/cicd-deployment-5f96747f9c   2         2         2       19h
  * 필요없는 deployment, service 삭제
  *  ~/I/S/jenkins  kubectl delete deployment.apps/cicd-deployment service/cicd-service
 
-* ansible애서 k8s로 ssh 접속을 할 
+* ansible애서 k8s로 ssh 접속을 할 수 있어야 함, Mac은 설정에서 원격로그인이 가능하게 설정하면 ssh로 원격에서 접속가능하다.
+* 
 
