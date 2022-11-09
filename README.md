@@ -434,5 +434,61 @@ nginx-deployment-7fb96c846b-vzp8w   1/1     Running   0          30s
 ```
 
 ### kubernetes script 파일
+* cicd-devops-deployment.yml
+```
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: cicd-deployment
+spec:
+  selector:
+    matchLabels:
+      app: cicd-devops-project
+  replicas: 2
+
+  template:
+    metadata:
+      labels:
+        app: cicd-devops-project
+    spec:
+      containers:
+      - name: cicd-devops-project
+        image: lanovia/cicd-project-ansible
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 8080
+```
+
+* cicd-devops-service.yml
+```
+apiVersion: v1
+kind: Service
+metadata:
+  name: cicd-service
+  labels:
+    app: cicd-devops-project
+spec:
+  selector:
+    app: cicd-devops-project
+  type: NodePort
+  ports:
+    - port: 8080
+      targetPort: 8080
+      nodePort: 32000
+```
+
+* kubectl apply -f cicd-devops-deployment.yml
+* kubectl apply -f cicd-devops-service.yml
+* kubectl get deployment
+* kubectl get services
+* kubectl get pods -o wide
+* kubectl get services
+```
+NAME           TYPE        CLUSTER-IP      EXTERNAL-IP   PORT(S)          AGE
+cicd-service   NodePort    10.107.203.83   <none>        8080:32000/TCP   16s
+```
+* http://localhost:32000/hello-world/ 정상화먄이 나오는지 확인
+
+
 
 
