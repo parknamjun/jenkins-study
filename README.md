@@ -493,4 +493,42 @@ cicd-service   NodePort    10.107.203.83   <none>        8080:32000/TCP   16s
 ### Kubernetes + Ansible 연동
 
 ### 실습8) Jenkins를 이용한 CI/CD 자동화 파이프라인 구축하기 ①
+* ansible docker에서 확인
+```
+[root@ansible ~]# ls -l create*
+-rw-r--r-- 1 root root 683 Nov  6 22:32 create-cicd-devops-container.yml
+-rw-r--r-- 1 root root 457 Nov  6 22:42 create-cicd-devops-image.yml
+```
+* Dockerfile
+```
+FROM tomcat:9.0
+
+LABEL org.opencontainers.image.authors="eahn.park@gmail.com"
+
+COPY ./hello-world.war /usr/local/tomcat/webapps
+```
+
+* k8s 서버 
+  *  ~/I/S/jenkins  kubectl get all
+```
+ ~/I/S/jenkins  kubectl get all                                          ✔  docker-desktop ⎈  07:24:57
+NAME                                   READY   STATUS    RESTARTS   AGE
+pod/cicd-deployment-5f96747f9c-htq5t   1/1     Running   0          19h
+pod/cicd-deployment-5f96747f9c-w9nwp   1/1     Running   0          19h
+
+NAME                   TYPE        CLUSTER-IP      EXTERNAL-IP   PORT(S)          AGE
+service/cicd-service   NodePort    10.107.203.83   <none>        8080:32000/TCP   19h
+service/kubernetes     ClusterIP   10.96.0.1       <none>        443/TCP          2d11h
+
+NAME                              READY   UP-TO-DATE   AVAILABLE   AGE
+deployment.apps/cicd-deployment   2/2     2            2           19h
+
+NAME                                         DESIRED   CURRENT   READY   AGE
+replicaset.apps/cicd-deployment-5f96747f9c   2         2         2       19h
+```
+
+ * 필요없는 deployment, service 삭제
+ *  ~/I/S/jenkins  kubectl delete deployment.apps/cicd-deployment service/cicd-service
+
+* ansible애서 k8s로 ssh 접속을 할 
 
