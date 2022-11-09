@@ -302,7 +302,7 @@ Password:
 * https://hub.docker.com/ 업로드 내용 확인
 * Image 생성 후 hub 배포, hosts 파일에 3, 4 IP가 있어 3번에서만 image를 생성하는 조건으로 실행
 ```
-reate-cicd-devops-image.yml 
+create-cicd-devops-image.yml 
 
 - hosts: all
 #  become: true
