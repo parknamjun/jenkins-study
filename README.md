@@ -487,7 +487,7 @@ spec:
 NAME           TYPE        CLUSTER-IP      EXTERNAL-IP   PORT(S)          AGE
 cicd-service   NodePort    10.107.203.83   <none>        8080:32000/TCP   16s
 ```
-* http://localhost:32000/hello-world/ 정상화먄이 나오는지 확인
+* http://localhost:32000/hello-world/ 정상화면이 나오는지 확인
 
 
 ### Kubernetes + Ansible 연동
