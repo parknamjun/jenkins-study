@@ -1,6 +1,6 @@
 ### local pc에서 사용
 
-* 공유 볼륨 : c:\docker-volume
+* 공유 볼륨 : d:\docker-volume
 * 네트워크 생성
   * docker network create --subnet=172.20.0.0/16 mynetwork
 
