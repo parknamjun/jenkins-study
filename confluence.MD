@@ -15,7 +15,8 @@
   * CREATE DATABASE confluence CHARACTER SET utf8mb4 COLLATE utf8mb4_bin;
 * DB연결 설정
   * jdbc:mysql://172.20.0.3/confluence?useSSL=false&allowPublicKeyRetrieval=true&sessionVariables=transaction_isolation='READ-COMMITTED'
-  * 'READ-COMMITTED' single quotation이 반드시 있어야 
+  * 'READ-COMMITTED' single quotation이 반드시 있어야 함
+  * 
 
  메모리를 얼마로 해야 하나...
  
