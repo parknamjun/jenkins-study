@@ -4,4 +4,4 @@
 
 ### SonarCube
 * docker run -d -p 9000:9000 --name sonarqube sonarqube
-* 
+* 초기계정 : admin/admin
